@@ -13,7 +13,6 @@ pattern = re.compile(r'<h1>(.*?)</h1>\s<h3>(.*?)</h3>')
 
 session = requests.Session()
 
-
 session.get('http://www.heibanke.com/lesson/crawler_ex02/')
 
 csrftoken1 = session.cookies.get('csrftoken')

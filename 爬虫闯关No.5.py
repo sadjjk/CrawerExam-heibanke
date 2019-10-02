@@ -48,10 +48,10 @@ def get_captcha(session):
         captcha_img_content = requests.get(captcha_url).content
 
         # tessera-ocr
-        # captcha_string = get_captcha_tesseraact(captcha_img_content)
+        captcha_string = get_captcha_tesseraact(captcha_img_content)
 
         # baidu-ocr
-        captcha_string = get_captcha_baiduOcr(captcha_img_content)
+        # captcha_string = get_captcha_baiduOcr(captcha_img_content)
 
     return captcha_string,captcha_id
 
@@ -129,33 +129,3 @@ if __name__ == '__main__':
 
             break
 
-
-
-
-# from aip import AipOcr
-#
-# config = {
-#     'appId': '17402632',
-#     'apiKey': '9vIQ9uVmGiBkoHtqGYI1dsTY',
-#     'secretKey': 'W7cIjUq0Ce1G443Mb7y7zvsLbuL4UEGY'
-# }
-#
-#
-# # APP_ID = '16909218'
-# # API_KEY = 'NsrhtcVxDym1AOXDqZfd36nz'
-# # SECRET_KEY = 'gVemv3TfPlrtMHBvpXW6MpqU0qjLfu3W'
-#
-# client = AipOcr(**config)
-#
-# def get_file_content(file):
-#     with open(file, 'rb') as fp:
-#         return fp.read()
-#
-# def img_to_str(image_path):
-#     image = get_file_content(image_path)
-#     result = client.basicGeneral(image)
-#     if 'words_result' in result:
-#         return '\n'.join([w['words'] for w in result['words_result']])
-#
-#
-# print(img_to_str('3.png'))

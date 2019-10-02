@@ -59,11 +59,10 @@ data = {
 content = re.findall(pattern,session.post('http://www.heibanke.com/lesson/crawler_ex03/',
                             data = data).text)[0]
 
-print(content)
 
 h1 = content[0]
 h3 = content[1]
 
-print(h1)
+# print(h1)
 print(h3)
 
